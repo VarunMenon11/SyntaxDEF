@@ -276,3 +276,29 @@ arr = np.array[2,3,4,5]
 print(np.random.permutation(arr))
 
 # ==========================================================================================================
+# Normal Distribution -> Use the random.normal() method.
+#                        It has 3 parameters :- 1)loc - Mean Value
+#                                               2)scale - Standard Deviation Value
+#                                               3)size - Shape of the returned array
+# ==========================================================================================================
+
+# Generate a random normal distribution of size 2x3 with mean at 1 and standard deviation of 2
+x = np.random.normal(loc=1, scale=2, size=(2, 3))
+
+print(x)
+
+
+# ==========================================================================================================
+# Some Advance stuff
+# ==========================================================================================================
+
+# TO take value from the txt file, and print it out here or edit it
+filedata = np.genfromtxt('filename.txt', dolimiter=',')
+filedata = filedata.astype('int32')
+# You can also give condition to what shud be printed like here, its printing the values above 50
+print(filedata[filedata < 50])
+
+# ==========================================================================================================
+# TO STUDY BINOMIAL AND POISSON DISTRIBUTION AND ALL....Go to this site link 
+#                 https://www.w3schools.com/python/numpy/numpy_random_normal.asp
+# ==========================================================================================================

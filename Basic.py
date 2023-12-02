@@ -30,7 +30,7 @@ print("\n\n")
 
 # ==========================================================================================================
 # Comments -> Comments are used to add explanatory notes in your code and are ignored by the 
-#             Python interpreter. ngle-line comments start with a hash symbol (#) Multi-line comments 
+#             Python interpreter. Single-line comments start with a hash symbol (#) Multi-line comments 
 #              can be enclosed in triple quotes (''' ''') or triple double quotes (""" """):
 # ==========================================================================================================
 
@@ -180,6 +180,11 @@ except Exception as e: #by Raising, we have raised this exception, hence its blo
 # ==========================================================================================================
 # FIle I/O -> Python provides basic functions and methods necessary to manipulate files by default. 
 #             You can do most of the file manipulation using a file object.
+#             File Handling -> (a) "r" -> Read. If not existing, it return error(IOError)
+#                              (b) "w" -> write. If not existing, it creates
+#                              (c) "a" -> Appends the file, if not existing, it creates
+#                              (d) "b" -> Binary Mode
+#             You can use multiple Handling together.... eg) f = open("Text.txt", "rb") to read in binary mode
 #             [Do search about different types of mode u can open a file]
 # ==========================================================================================================
 
@@ -196,6 +201,9 @@ fo.write( "Python is a great language.\nYeah its great!!\n") #to write something
 fo = open("testfile.txt", "r") # 'w' mode is used to write into the file and 'r' mode is used to read something out of the file
 
 str = fo.read(10) # To read something out of the file, we use this function, argunment is taken to read only that much index of the file
+print ("Read String is : ", str)
+
+str = fo.readline() # To read only one line
 print ("Read String is : ", str)
 
 position = fo.tell() #Returns the position of the file located
@@ -258,6 +266,44 @@ print(math.sqrt(4))
 print(math.ceil(1.5))
 print(math.floor(1.5))
 print(math.pi)
+
+
+# ==========================================================================================================
+# RegEX Module -> Regular Expression, forms a  search Pattern.
+#                 (1)findall-> Returns a list containing all matches and  if dont exist, list is empty
+#                 (2)search-> Returns a first occurence Match object 
+#                 (3)split -> Returns a list where the string has been split at each match
+#                 (4)sub -> Replaces one or many matches with a string
+#                 (5)compile -> compile a regular expression pattern string into a regex pattern object    
+# ==========================================================================================================
+import re
+
+txt = "The rain in rain but the rain is in the rain"
+x = re.split("rain", txt)
+print(x)
+
+txt = "The rain in Spain"
+x = re.search("Portugal", txt)
+print(x)
+x = re.search("rain", txt)
+print(x)
+
+
+txt = "The rain in Spain"
+x = re.findall("ai", txt)
+print(x)
+
+str = "432-123-4567"
+pho_pat = re.compile('^\d{3}-\d{3}-\d{4}')
+if pho_pat.match(str):
+    print("Phone numbe is right")
+
+
+# ==========================================================================================================
+# OS module -> To have interaction with the Operating System.
+#              
+# ==========================================================================================================
+
 
 # ==========================================================================================================
 # ==========================================================================================================

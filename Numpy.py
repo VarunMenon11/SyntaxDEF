@@ -248,5 +248,31 @@ print(newarr)
 
 
 # ==========================================================================================================
-# MORE TO COME
+# Random Number -> Random means something that can not be predicted logically. Random numbers generated
+#                  throuhg a generation algorithm are called pseudo random.
+#                  Numpy offers the random module to work with it.
+#                  Eg) x = random.randint(100) (to give int values)
+#                      x = random.rand() (gives float values)
+# ==========================================================================================================
+
+# ==========================================================================================================
+# Random Distribution -> A random distribution is a set of random numbers that follows a certain proablity
+#                        density function.
+#                        The choice() method allows you to generate a random value basded on an array of 
+#                        values. it allows us to speciffy the probability for each value (between 0 and 1)
+#                        The sum of all probability numbers should be 1.
+# ==========================================================================================================
+
+x = np.random.choice([3,5,7,8, 9], p=[0.1,0.2,0.2,0.5,0.0], size=(100))
+print(x) #Here value 9 will never occur as its p = 0.0
+
+# ==========================================================================================================
+# Random Permutations -> Its provides a random arrangemnt of values in the array.
+#                        two method use is shuffle() and permutation(). Shuffle() does changes on original 
+#                        and permutation() doesnt affect the original
+# ==========================================================================================================
+
+arr = np.array[2,3,4,5]
+print(np.random.permutation(arr))
+
 # ==========================================================================================================

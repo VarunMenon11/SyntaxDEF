@@ -246,6 +246,15 @@ newarr = arr[filter_arr]
 print(filter_arr)
 print(newarr)
 
+# ==========================================================================================================
+# Some Advance stuff
+# ==========================================================================================================
+
+# TO take value from the txt file, and print it out here or edit it
+filedata = np.genfromtxt('filename.txt', dolimiter=',')
+filedata = filedata.astype('int32')
+# You can also give condition to what shud be printed like here, its printing the values above 50
+print(filedata[filedata < 50])
 
 # ==========================================================================================================
 # Random Number -> Random means something that can not be predicted logically. Random numbers generated
@@ -276,7 +285,8 @@ arr = np.array[2,3,4,5]
 print(np.random.permutation(arr))
 
 # ==========================================================================================================
-# Normal Distribution -> Use the random.normal() method.
+# Normal Distribution -> Use the random.normal() method. It fits the probability distribution of many events, 
+#                        eg. IQ Scores, Heartbeat etc.
 #                        It has 3 parameters :- 1)loc - Mean Value
 #                                               2)scale - Standard Deviation Value
 #                                               3)size - Shape of the returned array
@@ -284,21 +294,33 @@ print(np.random.permutation(arr))
 
 # Generate a random normal distribution of size 2x3 with mean at 1 and standard deviation of 2
 x = np.random.normal(loc=1, scale=2, size=(2, 3))
-
 print(x)
 
+# ==========================================================================================================
+# Binomail Distribution -> It describes the outcome of binary scenarior, eg) toss of coin
+#                          It has 3 parameters -> n - number of trails
+#                                                 p - Probability of Occurence of each trail
+#                                                 size - The shape of the return array
+# ==========================================================================================================
+
+#Given 10 trails for coin toss generate 10 date points:
+x = np.random.binomial(n=10,p=0.5,size=10)
+print(x)
 
 # ==========================================================================================================
-# Some Advance stuff
+# Poisson Distribution -> It estimates how many tmes an event can happen in a specified time. Eg) If someone
+#                         eats twice a day what is the probablitity he will eat thrice
+#                         It has two parameters -> lam - rate or known number of occurrence
+#                                                  size - The shape of the return array
 # ==========================================================================================================
 
-# TO take value from the txt file, and print it out here or edit it
-filedata = np.genfromtxt('filename.txt', dolimiter=',')
-filedata = filedata.astype('int32')
-# You can also give condition to what shud be printed like here, its printing the values above 50
-print(filedata[filedata < 50])
+#Generate a random 1x10 distribution for occurrence 2:
+x = np.random.poisson(lam=2, size=10)
+print(x)
 
 # ==========================================================================================================
-# TO STUDY BINOMIAL AND POISSON DISTRIBUTION AND ALL....Go to this site link 
-#                 https://www.w3schools.com/python/numpy/numpy_random_normal.asp
+# TO STUDY ABOUT UNIFORM, LOGISTIC, MULTINOMIAL, EXPONENTIAL, CHI SQUARE, ZIPF, PARETO, PAYLEIGH DISTRIBUTION 
+# AND ALL....Go to this site link  https://www.w3schools.com/python/numpy/numpy_random_normal.asp
 # ==========================================================================================================
+
+

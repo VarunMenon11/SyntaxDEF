@@ -283,7 +283,8 @@ print(x) #Here value 9 will never occur as its p = 0.0
 
 arr = np.array[2,3,4,5]
 print(np.random.permutation(arr))
-
+import matplotlib.pyplot as plt
+import seaborn as sns
 # ==========================================================================================================
 # Normal Distribution -> Use the random.normal() method. It fits the probability distribution of many events, 
 #                        eg. IQ Scores, Heartbeat etc.
@@ -294,7 +295,8 @@ print(np.random.permutation(arr))
 
 # Generate a random normal distribution of size 2x3 with mean at 1 and standard deviation of 2
 x = np.random.normal(loc=1, scale=2, size=(2, 3))
-print(x)
+sns.displot(x)
+plt.show()
 
 # ==========================================================================================================
 # Binomail Distribution -> It describes the outcome of binary scenarior, eg) toss of coin
@@ -305,7 +307,8 @@ print(x)
 
 #Given 10 trails for coin toss generate 10 date points:
 x = np.random.binomial(n=10,p=0.5,size=10)
-print(x)
+sns.displot(x)
+plt.show()
 
 # ==========================================================================================================
 # Poisson Distribution -> It estimates how many tmes an event can happen in a specified time. Eg) If someone
@@ -316,7 +319,8 @@ print(x)
 
 #Generate a random 1x10 distribution for occurrence 2:
 x = np.random.poisson(lam=2, size=10)
-print(x)
+sns.displot(x)
+plt.show()
 
 # ==========================================================================================================
 # TO STUDY ABOUT UNIFORM, LOGISTIC, MULTINOMIAL, EXPONENTIAL, CHI SQUARE, ZIPF, PARETO, PAYLEIGH DISTRIBUTION 
